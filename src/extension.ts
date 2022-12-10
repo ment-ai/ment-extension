@@ -36,6 +36,7 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
     vscode.commands.registerCommand("ment-ai.initProfile", initProfile),
     vscode.commands.registerCommand("ment-ai.startGoal", startGoal),
+    vscode.commands.registerCommand("ment-ai.showSolution", showSolution),
     vscode.commands.registerCommand("ment-ai.newExercise", newExercise),
     vscode.commands.registerCommand(
       "ment-ai.answerExerciseText",
@@ -57,6 +58,7 @@ export function activate(context: vscode.ExtensionContext) {
   async function initProfile() {
     const email =
       (await vscode.window.showInputBox({
+        ignoreFocusOut: true,
         placeHolder: "OpenAI login email address",
         prompt: "Type your OpenAI email address to connect",
         value: "",
@@ -64,6 +66,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     const password =
       (await vscode.window.showInputBox({
+        ignoreFocusOut: true,
         placeHolder: "OpenAI login password",
         prompt:
           "Type your password to connect to OpenAI (we are not storing this information, please see README.md)",
@@ -81,6 +84,7 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.executeCommand("ment-ai.clearLogs");
     const goal =
       (await vscode.window.showInputBox({
+        ignoreFocusOut: true,
         placeHolder:
           "(e.g. become python backend developer, learn statistics with python)",
         prompt: "Type the goal you want to achieve:",
@@ -92,9 +96,23 @@ export function activate(context: vscode.ExtensionContext) {
     await textToMarkdownPreview(response, goal);
   }
 
-  async function newExercise() {
+  async function showSolution() {
     await textToMarkdownPreview(spinner, "Processing...", false);
-    const response = await exerciseCourse.generateNextExercise();
+    const response = await exerciseCourse.showSolutionExercise();
+    await textToMarkdownPreview(response, "Solution");
+  }
+
+  async function newExercise() {
+    const difficulty =
+      (await vscode.window.showInputBox({
+        ignoreFocusOut: true,
+        placeHolder: "(e.g. harder, easier, the same difficulty)",
+        prompt: "You can pick specify the next exercise difficulty:",
+        value: "",
+      })) || "the same difficulty";
+
+    await textToMarkdownPreview(spinner, "Processing...", false);
+    const response = await exerciseCourse.generateNextExercise(difficulty);
     await textToMarkdownPreview(response, "Move to the next exercise");
   }
 

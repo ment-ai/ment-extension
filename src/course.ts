@@ -73,7 +73,7 @@ export class CourseManager {
   public async startCourse(goal: string) {
     this.context.update(CURRENT_GOAL_KEY, goal);
     const courseGoalPath = vscode.Uri.parse(
-      `${MENT_AI_CONF_PATH_COURSE}${goal.replace(" ", "_")}.json`
+      `${MENT_AI_CONF_PATH_COURSE}${goal.replaceAll(" ", "_")}.json`
     );
     this.context.update(CURRENT_GOAL_FILE_KEY, courseGoalPath);
     let fileData: string = "";
@@ -145,9 +145,9 @@ export class ExerciseBasedCourse {
     this.courseManager.updateFile();
     return response;
   }
-  public async generateNextExercise() {
+  public async generateNextExercise(difficulty: string) {
     const response = await this.apiManager.request(
-      `((instruction)) next exercise`
+      `((instruction)) next exercise, make it ${difficulty}`
     );
     this.courseManager.addExercise(response);
     this.courseManager.updateFile();
@@ -161,8 +161,8 @@ export class ExerciseBasedCourse {
     return response;
   }
 
-  public async showSolutionExercise(text: string = "") {
-    const response = await this.apiManager.request(`((show solution)) ${text}`);
+  public async showSolutionExercise() {
+    const response = await this.apiManager.request(`((show solution))`);
     this.courseManager.addExerciseSolution(response, true);
     this.courseManager.updateFile();
     return response;

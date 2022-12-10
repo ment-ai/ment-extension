@@ -21,6 +21,7 @@
     "onCommand:ment-ai.initProfile",
     "onCommand:ment-ai.startGoal",
     "onCommand:ment-ai.newExercise",
+    "onCommand:ment-ai.showSolution",
     "onCommand:ment-ai.answerExerciseText",
     "onCommand:ment-ai.answerExerciseCode",
     "onCommand:ment-ai.askGPT",
@@ -39,6 +40,10 @@
       {
         "command": "ment-ai.startGoal",
         "title": "Ment.ai: Set new goal"
+      },
+      {
+        "command": "ment-ai.showSolution",
+        "title": "Ment.ai: Show solution"
       },
       {
         "command": "ment-ai.newExercise",
