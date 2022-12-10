@@ -4,6 +4,7 @@
   "displayName": "Ment.ai",
   "version": "1.1.1",
   "license": "GPL",
+  "publisher": "ment-ai",
   "author": {
     "email": "ment-ai.team@proton.me",
     "name": "Ment.ai"
