@@ -1,9 +1,18 @@
 # ment-ai README
 
-Ment.ai extension provide you an easy way to start using chatGPT in your daily work, and for your different learning purposes.
+Ment extension provide you an easy way to start using ChatGPT in your daily work, and for your different learning purposes.
 
 > :warning: Since ChatGPT API isn't publicly available we will need you to connect to your OpenAI account. Note that your login credentials will never be shared and will only send to OpenAI login API, to allow you to access ChatGPT.
 > As the owner of the account, you are responsible for the data you send to OpenAI and for how you use their services.
+
+# Purpose
+
+Ment extension has for mission to teach programming skills (any languages) in an efficient way, directly in the daily developer enviroment.
+
+The system is based on ChatGPT, so you might encounter some strange behaviour, if you feel like the responses from the model aren't relevant anymore, start a new course (you can reuse the same prompt as before). The exercise might be a bit diffucult, **no worries that's on purpose**. We start with a difficult exercise, like that if you can't solve it, we can decrease the difficulty or teach you notions you aren't sure to master yet (that's normal while learning new concepts, don't be shy).
+
+We recommend you to ask as much questions as you can, about terms or part of code you don't understand (see commands bellow to know the capabilities).
+We opened the [Github discussions](https://github.com/ment-ai/ment-extension/discussions/1) panel on our repository to discuss content related subject and features ideas. Feel free to participate:
 
 # Features
 
@@ -31,7 +40,11 @@ We added a list of interesting goal to start with: [GOALS_README.md](GOALS_READM
 
 > Ment.ai: Next exercise
 
-When you feel like you explore everything on the exercise topic, you can try another one, by using this command. The subject will remain focus on your current goal.
+When you feel like you explore everything on the exercise, you can try another one, by using this command. The subject will remain focus on your current goal. You can select one of the 3 type of difficulty for the next exercise:
+
+1. harder
+2. easier
+3. the same
 
 ## Submit answer
 
@@ -51,7 +64,7 @@ You will need to be in the file you want to submit. If you select a part of the 
 
 ## Request solution
 
-> Ment.ai: Answer/Submit with code
+> Ment.ai: Show solution
 
 ## Others
 
@@ -66,8 +79,6 @@ You will need to be in the file you want to submit. If you select a part of the 
     > Request: 'Can you refactor this code and explain what's changed?'
 
 If you select the a part of the code it will be append only that to the request otherwise it will send the all file.
-
-// add a gif of the 2 use case (select + all file)
 
 - **"Ment.ai: Clear ChatGPT Logs"**
   - You can clear the logs:
@@ -96,20 +107,28 @@ None
 
 ## Release Notes
 
+### 1.1.1
+
+- Add show solution command for the exercise.
+- Next exercise can pick the next difficulty.
+- Improve documentation.
+- Fix bugs about automatically submit input.
+- Fix bugs of json file creation.
+- Fix loader spinner.
+
 ### 1.0.0
 
 - Ment.ai is now proposing you to generate an exercise based on a given objective.
   - Answering it.
   - Asking question about it.
-  - Asking a solution for it.
   - Moving to a new exercise on the same subject.
 - Start as many objectives as you want.
 
 ### 0.0.2
 
 - Add basic command to get help on code related tasks with ChatGPT. Based on other awesome chat-gpt VScode extensions:
-  - [1](https://github.com/barnesoir/chatgpt-vscode-plugin)
-  - [2](https://github.com/kiranvshah/chatgpt-helper)]
+  - [chatgpt-vscode-plugin 1](https://github.com/barnesoir/chatgpt-vscode-plugin)
+  - [chatgpt-helper 2](https://github.com/kiranvshah/chatgpt-helper)
 
 ### 0.0.1
 
