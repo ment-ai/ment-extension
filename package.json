@@ -3,6 +3,14 @@
   "description": "Ment.ai will allow you to learn all kind of skills, mainly programming skills, and practice them directly inside VScode. A ChatGPT based AI assistant and mentor only dedicated to you, directly within VScode.",
   "displayName": "Ment.ai",
   "version": "1.0.0",
+  "license": "GPL",
+  "author": {
+    "email": "ment-ai.team@proton.me",
+    "name": "Ment.ai"
+  },
+  "repository": {
+    "url": "https://github.com/ment-ai/ment-extension/"
+  },
   "engines": {
     "vscode": "^1.73.0"
   },
@@ -75,7 +83,8 @@
     "watch-tests": "tsc -p . -w --outDir out",
     "pretest": "yarn run compile-tests && yarn run compile && yarn run lint",
     "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "test": "node ./out/test/runTest.js",
+    "vsix": "vsce package"
   },
   "devDependencies": {
     "@types/glob": "^8.0.0",
@@ -94,6 +103,7 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "chatgpt": "^1.4.0"
+    "chatgpt": "^1.4.0",
+    "vsce": "^2.15.0"
   }
 }

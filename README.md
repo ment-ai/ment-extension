@@ -15,7 +15,7 @@ Use the Command palette (<kbd>⌘ Command</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P<
 
 You will be prompt an input box where you need to specify your email, and password. We don't yet other login methods.
 
-We use [PyChatGPT](https://github.com/rawandahmad698/PyChatGPT) to make the initialize the connection and generate the access token. We will automatically install it on your machine and running locally without proxy, [src/openai.ts:15](src/openai.ts:15).
+We use [PyChatGPT](https://github.com/rawandahmad698/PyChatGPT) to make the initialize the connection and generate the access token. We will automatically install it on your machine and running locally without proxy (see [src/openai.ts:15](src/openai.ts:15)).
 
 ## Start course
 
@@ -23,7 +23,7 @@ We use [PyChatGPT](https://github.com/rawandahmad698/PyChatGPT) to make the init
 
 You will need to specify a goal you want to achieve, so ChatGPT can generate you the appropriated exercise. It might take ~5-10seconds.
 
-You can start a new goal at any point, see in the [~/mentai/courses](~/mentai/courses) folder the list of courses you did.
+You can start a new goal at any point, see in the `~/mentai/courses` folder the list of courses you did.
 
 We added a list of interesting goal to start with: [GOALS_README.md](GOALS_README.md)
 
