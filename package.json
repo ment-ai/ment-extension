@@ -2,7 +2,7 @@
   "name": "ment-ai",
   "description": "Ment.ai will allow you to learn all kind of skills, mainly programming skills, and practice them directly inside VScode. A ChatGPT based AI assistant and mentor only dedicated to you, directly within VScode.",
   "displayName": "Ment.ai",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "license": "GPL",
   "author": {
     "email": "ment-ai.team@proton.me",
