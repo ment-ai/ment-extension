@@ -136,7 +136,7 @@ export class ExerciseBasedCourse {
 
   public async generateEntryExercise(goal: string) {
     this.courseManager.startCourse(goal);
-
+    // TODO: add this to a setting variable.
     const response = await this.apiManager.request(
       `I want you to act as my personal teacher. You will generate small and hard exercises to help me reach my goal. You should not give me the solution in the first place, so I can try to solve them. In my future requests, I will specify the purpose of it by double parenthesis ((like this)). You should not use double parenthesis yourself. Here is my first goal: ${goal}`
     );
@@ -168,3 +168,7 @@ export class ExerciseBasedCourse {
     return response;
   }
 }
+
+/**
+ * Add new course that will make chatGPT act as Socrate philosopher, and ask you question to determine what you know.
+ */
