@@ -22,6 +22,9 @@ Use the Command palette (<kbd>⌘ Command</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P<
 
 > Ment.ai: Setup OpenAI account
 
+// TODO: talk about the 2 possibility.
+// if the normal version email/password doesn't work allow to provide the acess token, we should deactivate if that's the case the other python token creation.
+
 You will be prompt an input box where you need to specify your email, and password. We don't yet other login methods.
 
 We use [PyChatGPT](https://github.com/rawandahmad698/PyChatGPT) to make the initialize the connection and generate the access token. We will automatically install it on your machine and running locally without proxy (see [src/openai.ts:15](src/openai.ts:15)).

@@ -56,6 +56,7 @@ export function activate(context: vscode.ExtensionContext) {
   /** ----- User learning commands ----- */
 
   async function initProfile() {
+    // add another command to just specify an access token.
     const email =
       (await vscode.window.showInputBox({
         ignoreFocusOut: true,
